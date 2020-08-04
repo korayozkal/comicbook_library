@@ -1,0 +1,12 @@
+  <header><img src="images/mybanner.png" class="img-responsive main-image"></header>
+  <div class="col-md-8 col-md-offset-2">
+
+<h3>Sign Up</h3>
+<h3 style="color:red;"><%=@error%></h3>
+<form action="/signup" method="POST">
+	<input type="text" name="username" placeholder="Username:">
+	<input type="password" name="password" placeholder="Password:">
+	<input type="submit" value="Sign Up">
+</form>
+
+  </div>

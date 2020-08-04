@@ -1,0 +1,20 @@
+<h1 style="color:DeepSkyBlue ;">Welcome, <%= current_user.username %></h1>
+<header><img src="images/mybanner.png" class="img-responsive main-image"></header>
+  <div class="col-md-8 col-md-offset-2">
+
+
+<h2>Library: List of Comicbooks:</h2>
+
+<ul>
+<% @comic_books.each do |comic_book| %>
+ <h3> <li><a href="<%= "/comic_book/#{comic_book.id}" %>"><%= comic_book.title  %>, issue <%= comic_book.number %></a></li></h3>
+<% end %>
+</ul>
+</br>
+<a href="/comic_books/new">Add a new Comicbook to library </a>
+</br>
+<a href="/logout">Log Out</a>
+
+   
+</div>
+

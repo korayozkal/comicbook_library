@@ -1,0 +1,26 @@
+<h1>MY COMICBOOK</h1>
+  <div class="col-md-8 col-md-offset-2">
+
+ <h2>Comicbook Info
+
+<ul>
+  <li>Title: <%= @comic_book.title %></li>
+  <li>Publisher: <%= @comic_book.publisher %></li>
+  <li>Number: <%= @comic_book.number %></li>
+  <li>Writer: <%= @comic_book.writer %></li>
+  <li>Artist: <%= @comic_book.artist %></li>
+</ul>
+
+<h3><a href="/comic_books">List all comics in the Library</a></h3>
+<h3><a href="/comic_books/new">Add a new Comicbook to library </a></h3> 
+<h3><a href="/logout">Log Out</a></h3>
+<% if current_user == @comic_book.user%>
+<h3><a href=<%= "/comic_books/#{@comic_book.id}/edit" %>>Edit this comic</a></h3>
+<form action=<%= "/comic_books/#{@comic_book.id}" %> method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value=<%= "Delete #{@comic_book.title}" %>>
+</form>
+<% end %>
+
+  </div>
+  
