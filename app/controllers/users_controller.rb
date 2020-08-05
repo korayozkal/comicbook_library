@@ -30,7 +30,7 @@ end
 
     post '/login' do
     user = User.find_by(username: params[:username])
-    #binding.pry
+    
 	if params[:username] == ""  || params[:password] == ""	
 	   @error = "Username and password must be filled out."#ERROR MESSAGE
 	   erb :'/login'
