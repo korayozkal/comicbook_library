@@ -32,7 +32,7 @@ end
     user = User.find_by(username: params[:username])
     
 	if params[:username] == ""  || params[:password] == ""	
-	   @error = "Username and password must be filled out."#ERROR MESSAGE
+	   @error = "Username and password must be filled out."
 	   erb :'/login'
 
     elsif  user && user.authenticate(params[:password])
