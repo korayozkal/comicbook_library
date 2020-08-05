@@ -67,7 +67,7 @@ delete "/comic_books/:id" do
      comic_book.destroy
      redirect "/comic_books"
   else 
-    redirect '/login'
+     redirect '/login'
     end 
 end
 
