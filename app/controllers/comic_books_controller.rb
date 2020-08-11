@@ -50,7 +50,7 @@ class ComicBooksController < ApplicationController
     end
 end 
 
-put "/comic_books/:id" do
+    put "/comic_books/:id" do
        comic_book = ComicBook.find_by(id: params[:id]) 
     if logged_in? && current_user == @comic_book.user
        comic_book.update(params[:comic_book])
@@ -60,12 +60,12 @@ put "/comic_books/:id" do
    end
 end
 
-delete "/comic_books/:id" do
+    delete "/comic_books/:id" do
         comic_book = ComicBook.find_by(id: params[:id])
-     if logged_in? && current_user == comic_book.user 
+    if logged_in? && current_user == comic_book.user 
         comic_book.destroy
         redirect "/comic_books"
-  else 
+    else 
          redirect '/login'
     end 
 end

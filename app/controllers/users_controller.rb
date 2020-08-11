@@ -17,7 +17,6 @@ class UsersController < ApplicationController
 	   @error = "Username and password must be filled out." #ERROR MESSAGE
 	   erb :'/signup'  
 
-   
     elsif params[:username] == User.find_by(username: params[:username])
        erb :'/signup'
     else 
