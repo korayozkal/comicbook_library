@@ -2,7 +2,7 @@
 class ComicBooksController < ApplicationController
 
     get "/comic_books" do 
-        if logged_in?git
+        if logged_in?
             @comic_books = ComicBook.all
             erb :"/comic_books/index"
         else 

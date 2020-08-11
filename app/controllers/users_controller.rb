@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     end
   
     post '/signup' do
-    if params[:username] == ""  || params[:password] == ""	#TEST	
-	   @error = "Username and password must be filled out." #ERROR MESSAGE
+    if params[:username] == ""  || params[:password] == ""		
+	   @error = "Username and password must be filled out." 
 	   erb :'/signup'  
 
     elsif params[:username] == User.find_by(username: params[:username])
