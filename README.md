@@ -12,7 +12,7 @@ User will have the ability to:
 - Fork the repository and clone it
 - Run bundle install to install gems (If you don't have bundler, first run gem install bundler)
 - Set up the database with rake db:migrate command in your terminal.
-- Run shotgun to run the app locally at localhost:9393 in your browser.
+- Run shotgun in your terminal to run the app locally at localhost:9393 in your browser.
 - Create your user account and enjoy! 
 
 # Contributing
