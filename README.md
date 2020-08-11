@@ -1,44 +1,27 @@
-# MyComicsBank
+# ComicbookLibrary
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/my_comics_bank`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a simple Ruby app built with Sinatra that will allow you to keep track of a public comicbook library. 
 
-TODO: Delete this and the text above, and describe your gem
+User will have the ability to:
 
-## Installation
+- Create their own account, sign in and out of their own account.
+- Create a comicbook library
+- Add, edit or delete comicbooks created only by the same user.
 
-Add this line to your application's Gemfile:
+# Installation
+Step 1 - Fork the repository and clone it
+Step 2 - Run bundle install to install gems (If you don't have bundler, first run gem install bundler)
+Step 3 - Set up the database with rake db:migrate command in your terminal.
+Step 4 - Run shotgun to run the app locally at localhost:9393 in your browser.
+Step 5 - Create your user account and enjoy! 
 
-```ruby
-gem 'my_comics_bank'
-```
+# Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/korayozkal/comicbook_library This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install my_comics_bank
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/my_comics_bank. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/my_comics_bank/blob/master/CODE_OF_CONDUCT.md).
+# License
+he gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 
-## License
+# Code of Conduct
+Everyone interacting in the ComicbookLibrary project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct]
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the MyComicsBank project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/my_comics_bank/blob/master/CODE_OF_CONDUCT.md).
