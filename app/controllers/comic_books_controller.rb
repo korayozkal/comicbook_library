@@ -61,12 +61,12 @@ put "/comic_books/:id" do
 end
 
 delete "/comic_books/:id" do
-     comic_book = ComicBook.find_by(id: params[:id])
-  if logged_in? && current_user == comic_book.user 
-     comic_book.destroy
-     redirect "/comic_books"
+        comic_book = ComicBook.find_by(id: params[:id])
+     if logged_in? && current_user == comic_book.user 
+        comic_book.destroy
+        redirect "/comic_books"
   else 
-     redirect '/login'
+         redirect '/login'
     end 
 end
 
