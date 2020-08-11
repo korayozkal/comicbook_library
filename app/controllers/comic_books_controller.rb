@@ -43,15 +43,15 @@ class ComicBooksController < ApplicationController
     get "/comic_books/:id/edit" do
         @comic_book = ComicBook.find_by(id: params[:id])
 
-    if logged_in? && current_user == @comic_book.user
-        erb :"/comic_books/edit"
-    else 
-        redirect "/comic_books"
+        if logged_in? && current_user == @comic_book.user
+           erb :"/comic_books/edit"
+        else 
+           redirect "/comic_books"
     end
 end 
 
 put "/comic_books/:id" do
-     comic_book = ComicBook.find_by(id: params[:id]) 
+       comic_book = ComicBook.find_by(id: params[:id]) 
     if logged_in? && current_user == @comic_book.user
        comic_book.update(params[:comic_book])
        redirect "/comic_book/#{comic_book.id}"
