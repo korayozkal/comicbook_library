@@ -61,10 +61,17 @@ To initiate this action,  a "delete" button was added to the show page.
     <input type="submit" value=<%= "Delete #{@comic_book.title}" %>>
 </form>
 
-This button sends a request to the delete controller action, where we will identify the article to delete and delete it. Then, the action direct redirect to the index of all comic books   => redirect "/comic_books"
+This button sends a request to the delete controller action, where we will identify the article to delete and then delete it. Then, the action direct redirect to the index of all comic books   => redirect "/comic_books"
 
  X-Ensure that users can't modify content created by other users
+ I used current_user helper method in my comic_books controller actions to ensure only if the user using the app in the current session is equal to the user who has created the comic_book, can delete and update content created in the app by using the conditional below: 
+
+if the current_user == @comic_book.user 
+
+Also in the edit and show views I used the same conditional to display the edit and display form options. 
+
  X-Include user input validations
+ 
  X-BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
  X-Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 
