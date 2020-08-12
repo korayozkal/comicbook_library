@@ -15,11 +15,11 @@
   <input type="text" name="comic_book[writer]" value=<%= @comic_book.writer %>>
   <li><label for="artist">Artist:</label></li>
   <input type="text" name="comic_book[artist]" value=<%= @comic_book.artist %>>
-  <li><label for="grade">Artist:</label></li>
+  <br>
+  <br>
   <input type="submit" value="Submit Changes">
 </form>
 </ul>
-<br>
 <br>
 <form action=<%= "/comic_books/#{@comic_book.id}" %> method="post">
     <input type="hidden" name="_method" value="delete">
