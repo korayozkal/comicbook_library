@@ -71,9 +71,23 @@ if the current_user == @comic_book.user
 Also in the edit and show views I used the same conditional to display the edit and display form options. 
 
  X-Include user input validations
- 
+ I used validations in my models to make sure to keep the data clean.
+
  X-BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+
+I used error messages in my controller actions and view forms to inform the validation criteria must be met to complete the action. 
+
+For example: 
+If username or password is an empty string  
+    if params[:username] == ""  || params[:password] == ""		
+the user will see the error message    
+	@error = "Username and password must be filled out." 
+set in the view by the line of code below 
+    <h3 style="color:red;"><%=@error%></h3>
+
  X-Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+ 
+ My README.md file includes the information requested about. Please check the README.md file for details.
 
 Confirm
  X-You have a large number of small Git commits
