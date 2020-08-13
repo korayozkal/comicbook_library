@@ -29,7 +29,7 @@ The Read CRUD action corresponds to two different controller actions in the comi
 show and index.
 
 - The SHOW action  renders the ERB view show.erb, which shows an individual comic book.  
-   get "/comic_book/:id"    => erb :"/comic_books/show"
+   get "/comic_books/:id"    => erb :"/comic_books/show"
 
 - The INDEX action  renders the ERB view index.erb, which shows a list of all of the comic books.
    get "/comic_books"       => erb :"/comic_books/index"
@@ -38,7 +38,7 @@ The NEW action creates a route in the controller,  get "/comic_books/new"
 that renders the new.erb view  erb :"/comic_books/new"
 erb :"/comic_books/new" is a blank form that submits a POST request to => post  '/comic_book' 
 
-when the form sends the request to  CREATE action controller post '/comic_book', that creates a new comic book from the params from the form, then redirects to that new comic book’s show page => redirect "/comic_book/#{comic_book.id}"
+when the form sends the request to  CREATE action controller post '/comic_book', that creates a new comic book from the params from the form, then redirects to that new comic book’s show page => redirect "/comic_books/#{comic_book.id}"
 
 # UPDATE
 The Update CRUD action corresponds to the edit controller action and update controller action.
@@ -75,7 +75,7 @@ Also in the edit and show views I used the same conditional to display the edit 
 
  X-BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
 
-I used error messages in my controller actions and view forms to inform the validation criteria must be met to complete the action. 
+I used error messages in my controller actions and view forms to inform user that the validation criteria must be met to complete the action. 
 
 For example: 
 If username or password is an empty string  
