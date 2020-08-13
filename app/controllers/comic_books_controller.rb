@@ -18,14 +18,14 @@ class ComicBooksController < ApplicationController
         end
     end 
    
-    post '/comic_book' do 
+    post '/comic_books' do 
     
         if logged_in?
             #comic_book = ComicBook.new(params[:comic_book])
             #comic_book.user = current_user
             comic_book = current_user.comic_books.build(params[:comic_book])
             comic_book.save 
-            redirect "/comic_book/#{comic_book.id}" 
+            redirect "/comic_books/#{comic_book.id}" 
         else 
             redirect '/login'
         end 
