@@ -7,7 +7,7 @@
 
 <ul>
 <% @comic_books.each do |comic_book| %>
- <h3> <li><a href="<%= "/comic_book/#{comic_book.id}" %>"><%= comic_book.title  %>, issue <%= comic_book.number %></a></li></h3>
+ <h3> <li><a href="<%= "/comic_books/#{comic_book.id}" %>"><%= comic_book.title  %>, issue <%= comic_book.number %></a></li></h3>
 <% end %>
 </ul>
 </br>
