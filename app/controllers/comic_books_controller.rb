@@ -31,7 +31,7 @@ class ComicBooksController < ApplicationController
         end 
     end 
         
-    get "/comic_book/:id" do
+    get "/comic_books/:id" do
         if logged_in?
              @comic_book = ComicBook.find_by(id: params[:id])
              erb :"/comic_books/show"
@@ -53,7 +53,7 @@ end
        comic_book = ComicBook.find_by(id: params[:id]) 
     if logged_in? && current_user == comic_book.user
        comic_book.update(params[:comic_book])
-       redirect "/comic_book/#{comic_book.id}"
+       redirect "/comic_books/#{comic_book.id}"
     else 
        redirect '/login'
    end
