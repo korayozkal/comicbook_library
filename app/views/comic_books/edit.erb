@@ -6,15 +6,15 @@
 <form action=<%= "/comic_books/#{@comic_book.id}" %> method="post">
   <input type="hidden" name="_method" value="put">
   <li><label for="title">Title:</label></li>
-  <input type="text" name="comic_book[title]" value=<%= @comic_book.title %>>
+  <input type="text" name="comic_book[title]" value="<%= @comic_book.title %>">
   <li><label for="publisher">Publisher:</label></li>
-  <input type="text" name="comic_book[publisher]" value=<%= @comic_book.publisher %>>
+  <input type="text" name="comic_book[publisher]" value="<%= @comic_book.publisher %>">
   <li><label for="number">Number:</label></li>
   <input type="number" name="comic_book[number]" value=<%= @comic_book.number %>>
   <li><label for="writer">Writer:</label></li>
-  <input type="text" name="comic_book[writer]" value=<%= @comic_book.writer %>>
+  <input type="text" name="comic_book[writer]" value="<%= @comic_book.writer %>">
   <li><label for="artist">Artist:</label></li>
-  <input type="text" name="comic_book[artist]" value=<%= @comic_book.artist %>>
+  <input type="text" name="comic_book[artist]" value="<%= @comic_book.artist %>">
   <br>
   <br>
   <input type="submit" value="Submit Changes">
