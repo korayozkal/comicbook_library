@@ -20,14 +20,16 @@ class ComicBooksController < ApplicationController
    
     post '/comic_books' do 
     
-        if logged_in?
-            #comic_book = ComicBook.new(params[:comic_book])
-            #comic_book.user = current_user
-            comic_book = current_user.comic_books.build(params[:comic_book])
-            comic_book.save 
-            redirect "/comic_books/#{comic_book.id}" 
+        if params[:comic_book].values.any?{|v| v == "" }
+           @error = "All fields must be filled out." 
+           erb :'/comic_books/new'
+        
         else 
-            redirect '/login'
+         #comic_book = ComicBook.new(params[:comic_book])
+         #comic_book.user = current_user    
+        comic_book = current_user.comic_books.build(params[:comic_book])
+        comic_book.save
+        redirect "/comic_books/#{comic_book.id}" 
         end 
     end 
         
