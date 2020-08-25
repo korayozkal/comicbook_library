@@ -19,7 +19,7 @@ class ComicBooksController < ApplicationController
     end 
    
     post '/comic_books' do 
-    
+    #binding.pry
         if params[:comic_book].values.any?{|v| v == "" }
            @error = "All fields must be filled out." 
            erb :'/comic_books/new'
@@ -27,9 +27,9 @@ class ComicBooksController < ApplicationController
         else 
          #comic_book = ComicBook.new(params[:comic_book])
          #comic_book.user = current_user    
-        comic_book = current_user.comic_books.build(params[:comic_book])
-        comic_book.save
-        redirect "/comic_books/#{comic_book.id}" 
+           comic_book = current_user.comic_books.build(params[:comic_book])
+           comic_book.save
+           redirect "/comic_books/#{comic_book.id}" 
         end 
     end 
         
@@ -48,28 +48,30 @@ class ComicBooksController < ApplicationController
            erb :"/comic_books/edit"
         else 
            redirect "/comic_books"
-    end
-end 
+        end
+    end 
 
     put "/comic_books/:id" do
        comic_book = ComicBook.find_by(id: params[:id]) 
-    if logged_in? && current_user == comic_book.user
-       comic_book.update(params[:comic_book])
-       redirect "/comic_books/#{comic_book.id}"
-    else 
-       redirect '/login'
-   end
-end
+
+        if logged_in? && current_user == comic_book.user
+           comic_book.update(params[:comic_book])
+           redirect "/comic_books/#{comic_book.id}"
+        else 
+           redirect '/login'
+        end
+    end
 
     delete "/comic_books/:id" do
         comic_book = ComicBook.find_by(id: params[:id])
-    if logged_in? && current_user == comic_book.user 
-        comic_book.destroy
-        redirect "/comic_books"
-    else 
-         redirect '/login'
-    end 
-end
+
+        if logged_in? && current_user == comic_book.user 
+            comic_book.destroy
+            redirect "/comic_books"
+         else 
+            redirect '/login'
+         end 
+    end
 
 end
 
